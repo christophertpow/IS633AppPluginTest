@@ -1,0 +1,156 @@
+
+html, body {
+  height: 100%;
+  margin: 0px !important;
+}
+.content {
+  padding: 20px;
+  min-height: 100%;
+  margin: 0 auto -50px;
+}
+.footer,
+.push {
+  height: 50px;
+}
+
+
+h1 {font-family: sans-serif; text-align: center; font-size: 28px;}
+
+h2 {font-family: sans-serif; text-align: center; color: #EDC7B7; font-size: 26px; }
+
+h3 {font-family: sans-serif; text-align: center; color: white; font-size: 22px; }
+
+p {padding: 0px 20px; font-family: Helvetica sans-serif; font-size: 20px; color: white;}
+
+.toplabel {padding: 0px 8px; font-family: Helvetica sans-serif; font-size: 20px; color: white;}
+
+#historylabel {padding: 0px 20px; font-family: Helvetica sans-serif; font-size: 22px; color: white; text-align: center; }
+
+
+#placeholder {height: 70%; width: 100%; max-width: 600px; overflow: scroll; background-color: white; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; }
+#listsection {visibility: hidden;  height: 70%; width: 100%;  width: 100%; max-width: 600px; overflow: scroll; background-color: #659DBD; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%; }
+
+#addcustomersection {visibility: hidden;  height: 70%; width: 100%;  width: 100%; max-width: 600px; overflow: scroll; background-color: #C38D9E; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%; }
+
+
+#historysection {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #C38D9E; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;  }
+
+#currentorderssection {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #66B9BF; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;   }
+
+#updateorderssection {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #A239CA; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;   }
+
+
+#aboutsection {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #41B3A3; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;   }
+
+
+
+
+table, th, td, tr {
+   
+      border: solid 1px white;
+    text-align: center;
+    color: white;
+}
+
+td {
+  padding: 3px;
+}
+
+table {
+     width: 96%;
+     margin: 0px 2% 15px 2%;
+    border-collapse: collapse;
+}
+
+table a {
+  color: #EDC7B7;
+}
+
+.resptable {
+   overflow-x: auto;
+}
+
+
+.dropdown {
+   overflow: hidden;
+   height: 34px;
+   width: 300px;
+    margin-left: auto;
+   margin-right: auto;
+   display: block;
+   text-align: center;
+}
+
+.dropdown select {
+   background: transparent;
+   border: none;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+    border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 280px;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+   text-align: center;
+}
+
+.dropdown {
+   height: 34px;
+   width: 300px;
+}
+
+.bigbutton {
+    display: block;
+    background-color: #00008B;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px auto;
+    cursor: pointer;
+    
+}
+
+input[type=text], input[type=number] {
+    width: 175px;
+    padding: 12px 20px;
+    margin: 4px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+label {
+    width: 275px;
+    margin: 4px auto 0px auto;
+    display: block;
+    text-align: center;
+}
+
+.labelcaption {
+    font-style: italic;
+    color: white;
+    font-size: 15px; }
+
+
+
+/* Footer */
+
+
+
+footer {
+    text-align: center;
+    font-style: italic;
+    background-color: #ADD8E6;
+    display: block;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 8px 0px 0px 0px;
+
+    }

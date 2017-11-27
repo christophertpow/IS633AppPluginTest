@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id = "edu.uab.business.studentapp"
+    versionCode = "1"
+    version  = "0.0.1" >
+    
+    <!--versionCode is optional and Android only -->
+    
+    <name>IS 633 Plugin Test</name><description>Mobile App Plugin Test</description>
+    
+    <author>Chris Pow</author>
+    
+   <preference name="phonegap-version" value="cli-6.1.0" />
+   <plugin name="cordova-plugin-whitelist" source="npm" />
+   <access origin="*" />
+   <plugin name="cordova-plugin-geolocation" source="npm" />
+    
+<icon src="images/icons/icon.png" platform="android" />
+<icon src="images/icons/ldpi.png" platform="android" qualifier="ldpi" />
+<icon src="images/icons/mdpi.png" platform="android" qualifier="mdpi" />
+<icon src="images/icons/hdpi.png" platform="android" qualifier="hdpi" />
+<icon src="images/icons/xhdpi.png" platform="android" qualifier="xhdpi" />
+<icon src="images/icons/xxhdpi.png" platform="android" qualifier="xxhdpi" />
+<icon src="images/icons/xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
+<icon src="images/icons/fr-xxhdpi.png" platform="android" qualifier="fr-xxhdpi" />
+
+
+<splash src="images/splash/ldpi.png" platform="android" qualifier="ldpi" />
+<splash src="images/splash/mdpi.png" platform="android" qualifier="mdpi" />
+<splash src="images/splash/hdpi.png" platform="android" qualifier="hdpi" />
+<splash src="images/splash/xhdpi.png" platform="android" qualifier="xhdpi" />
+<splash src="images/splash/xxhdpi.png" platform="android" qualifier="xxhdpi" />
+<splash src="images/splash/xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
+
+</widget>
+

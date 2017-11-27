@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>IS 633 Assignment Plugin Test</title>
+<link rel="stylesheet" type="text/css" href="styles/Assignment5.css" />
+<script src="js/Assignment5.js"></script>
+</head>
+<body>
+
+   <div id="header"><header>
+    <h1>IS 633 Plugin Test</h1>
+    <hr>
+</header></div>
+
+
+<section id="title">
+    <select onchange="AreaSelection(value)" id="menu" class="dropdown">
+        <option value="None">Please select an option.</option>
+        <option value="Customer List">Customer List</option>
+        <option value="Add Customer">Add Customer</option>
+        <option value="Customer Order History">Customer Order History</option>
+		  <option value="Current Orders">Current Orders</option>
+		  <option value="Update Orders">Update Orders</option>
+		  <option value="Geolocation">Geolocation</option>
+		  <option value="About">About</option>
+    </select>
+</section>
+
+<hr>
+
+
+
+
+
+    <div id="placeholder"></div>
+    
+    <section id="listsection">
+    <h2>Customer List</h2>
+    <div id="customerlist"></div>
+    <button onclick='AreaSelection("Add Customer")' id="backtoadd" class="bigbutton">Add Customer</button>
+    </section>
+   
+    <section id="historysection">
+    <h2>Customer Order History</h2>
+	 
+	  <label><span class="toplabel">Enter the Customer ID:</span></label>
+      
+      <input type="text" value="" id="entercustomerid" onfocus="HideFooter()" onblur="ShowFooter()">
+      <label class="labelcaption"> The customer ID should be 5 uppercase letters.</label>
+		
+		<button onclick="OrderHistory()" id="getcustomerorderhistory" class="bigbutton">Get Customer Order History</button>
+	 
+		<div id="orderhistory"></div>
+		<button onclick='AreaSelection("Customer List")' id="backtolist" class="bigbutton">Return to Customer List</button>
+	
+    </section>
+    
+    <section id="addcustomersection">
+    <h2>Add a Customer</h2>
+	 
+	  <label><span class="toplabel">Enter the Customer ID:</span></label>
+      <input type="text" value="" id="addcustomerid" onfocus="HideFooter()" onblur="ShowFooter()">
+      <label class="labelcaption"> The customer ID should be 5 uppercase letters and cannot match any current customer IDs.</label>
+		
+       <br>
+       <label><span class="toplabel">Company Name:</span></label>
+         <input type="text" id="addcustomername" onfocus="HideFooter()" onblur="ShowFooter()">
+		 <br>
+        <label><span class="toplabel">City:</span></label>
+        <input type="text" id="addcustomercity" onfocus="HideFooter()" onblur="ShowFooter()">
+		<br>
+		
+		<button onclick="CreateCustomer()" id="createcustomer" class="bigbutton">Add Customer</button>
+	 
+		<div id="addcustomer"></div>
+		<button onclick='AreaSelection("Customer List")' id="backtolist" class="bigbutton">Return to Customer List</button>
+	
+    </section>
+	 
+	  <section id="currentorderssection">
+    <h2>Current Orders</h2>
+	 
+	 <label><span class="toplabel">Enter the Customer ID:</span></label>
+      
+      <input type="text" value="" id="ordercustomeridinput" onfocus="HideFooter()" onblur="ShowFooter()">
+      <label class="labelcaption"> The customer ID should be 5 uppercase letters.</label>
+		
+		<button onclick="CurrentOrder()" id="getcurrentorder" class="bigbutton">Get Current Order</button>
+		
+    <div id="currentorders"></div>
+	 
+	 <button onclick='AreaSelection("Customer List")' id="backtolist" class="bigbutton">Return to Customer List</button>
+    </section>
+	 
+	   <section id="updateorderssection">
+    <h2>Update Orders</h2>
+	 
+        
+                <label><span class="toplabel">Order ID:</span></label>
+                <input type="text" id="orderid" disabled="true">
+               <br>
+                <label><span class="toplabel">Shipping Address:</span></label>
+                <input type="text" id="shipaddress" onfocus="HideFooter()" onblur="ShowFooter()">
+                <br>
+                <label><span class="toplabel">City:</span></label>
+                <input type="text" id="shipcity" onfocus="HideFooter()" onblur="ShowFooter()">
+					 <br>
+					  <label><span class="toplabel">Name:</span></label>
+                <input type="text" id="shipname" onfocus="HideFooter()" onblur="ShowFooter()">
+					  <br>
+					 	<label><span class="toplabel">Post Code:</span></label>
+                <input type="text" id="shippost" onfocus="HideFooter()" onblur="ShowFooter()"> 
+                 <br>
+                 <button onclick="OrderUpdate()" class="bigbutton">Update Order Information</button>
+	 
+	 
+    <div id="updateorders"></div>
+    </section>
+		
+		
+		<section id="geolocation">
+			<h3>Geolocation</h3>
+			<hr>
+			<button onclick="Location()" class="bigbutton">Find Your Current Location</button>
+			<br>
+			<div id ="latlong"></div>
+		
+	<div id="map"></div>
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 39, lng: -95},
+          zoom: 5
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script> 
+   
+	 <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPSj_mds-FnBa8T2d3n4eCZzNRQBlsiEY&callback=initMap">
+    </script>
+		
+		</section>
+		
+	  <section id="aboutsection">
+    <h2>About</h2>
+	 <h3>Chris Pow</h3>
+	 <p>I developed this mobile app for UAB IS 633. It combines HTML, CSS, and JavaScript and uses JSON and AJAX to deliver dynamic content.</p><p>The other two sections allow a user to view a list of customers and view each of their order histories by either clicking on a link on each company name in the Customer List section, or by entering the company's customer ID in the Customer Order History section.</p><p>I have decided to develop my apps for Android and will use a Mac to develop them.</p> 
+    </section>
+    <div class="push"></div>
+</div>
+
+
+		
+		
+		
+		
+            <footer class="footer" id="footer"> Chris Pow<br />
+      <a href="mailto:cpow@uab.edu">cpow@uab.edu</a>
+           </footer> 
+		
+   
+    
+  
+
+</body>
+</html>
