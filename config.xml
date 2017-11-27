@@ -16,6 +16,7 @@
    <plugin name="cordova-plugin-whitelist" source="npm" />
    <access origin="*" />
    <plugin name="cordova-plugin-geolocation" source="npm" />
+   <plugin name="cordova-plugin-splashscreen" source="npm" />
     
 <icon src="icon.png" platform="android" />
 <icon src="images/icons/ldpi.png" platform="android" qualifier="ldpi" />
@@ -26,6 +27,11 @@
 <icon src="images/icons/xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
 <icon src="images/icons/fr-xxhdpi.png" platform="android" qualifier="fr-xxhdpi" />
 
+
+<preference name="SplashScreen" value="foo" />
+<preference name="SplashScreenDelay" value="3000" />
+<preference name="SplashMaintainAspectRatio" value="true" />
+<preference name="SplashShowOnlyFirstTime" value="true" />
 
 <splash src="splash.png" platform="android" />
 <splash src="images/splash/ldpi.png" platform="android" qualifier="ldpi" />
