@@ -17,7 +17,7 @@
    <access origin="*" />
    <plugin name="cordova-plugin-geolocation" source="npm" />
     
-<icon src="images/icons/icon.png" platform="android" />
+<icon src="icon.png" platform="android" />
 <icon src="images/icons/ldpi.png" platform="android" qualifier="ldpi" />
 <icon src="images/icons/mdpi.png" platform="android" qualifier="mdpi" />
 <icon src="images/icons/hdpi.png" platform="android" qualifier="hdpi" />
@@ -27,6 +27,7 @@
 <icon src="images/icons/fr-xxhdpi.png" platform="android" qualifier="fr-xxhdpi" />
 
 
+<splash src="splash.png" platform="android" />
 <splash src="images/splash/ldpi.png" platform="android" qualifier="ldpi" />
 <splash src="images/splash/mdpi.png" platform="android" qualifier="mdpi" />
 <splash src="images/splash/hdpi.png" platform="android" qualifier="hdpi" />
