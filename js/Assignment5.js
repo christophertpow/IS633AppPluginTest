@@ -460,7 +460,6 @@ else {
 
 function Location() //Calls the Geolocation function built in to the web browser
 {
-    document.addEventListener("deviceready", onDeviceReady, false);
     var geo = navigator.geolocation;  //References the Web Browser (navigator) geolocation service
     if (geo) //Tests to see if geolocation service is available
     {
