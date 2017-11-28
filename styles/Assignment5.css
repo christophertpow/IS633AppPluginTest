@@ -34,13 +34,13 @@ p {padding: 0px 20px; font-family: Helvetica sans-serif; font-size: 20px; color:
 #addcustomersection {visibility: hidden;  height: 70%; width: 100%;  width: 100%; max-width: 600px; overflow: scroll; background-color: #C38D9E; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%; }
 
 
-#historysection {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #C38D9E; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;  }
+#historysection {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #972e2e; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;  }
 
 #currentorderssection {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #66B9BF; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;   }
 
 #updateorderssection {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #A239CA; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;   }
 
-#geolocation {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #A239CA; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;   }
+#geolocation {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #97084f; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;   }
 
 
 #aboutsection {visibility: hidden; height: 70%; width: 100%; width: 100%;  max-width: 600px; overflow: scroll; background-color: #41B3A3; position: absolute;  left: 0;  right: 0;  margin-left: auto;  margin-right: auto; display: block; padding-bottom: 7%;   }
