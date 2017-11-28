@@ -476,10 +476,10 @@ document.addEventListener("deviceready", onDeviceReady, false);
         getMapLocation();                
     }
 
-    // Show an alert if there is a problem getting the geolocation
-    //
-    function onError() {
-        alert('onError!');
+    
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
     }
 
 function getMapLocation() {
