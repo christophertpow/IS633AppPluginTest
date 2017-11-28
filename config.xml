@@ -31,7 +31,7 @@
 <preference name="SplashScreen" value="foo" />
 <preference name="SplashScreenDelay" value="3000" />
 <preference name="SplashMaintainAspectRatio" value="true" />
-<preference name="SplashShowOnlyFirstTime" value="true" />
+<preference name="SplashShowOnlyFirstTime" value="false" />
 
 <splash src="splash.png" platform="android" />
 <splash src="images/splash/ldpi.png" platform="android" qualifier="ldpi" />
