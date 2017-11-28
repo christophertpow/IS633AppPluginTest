@@ -14,9 +14,9 @@
     
    <preference name="phonegap-version" value="cli-6.1.0" />
    <plugin name="cordova-plugin-whitelist" source="npm" />
-   <access origin="*" />
    <plugin name="cordova-plugin-geolocation" source="npm" />
    <plugin name="cordova-plugin-splashscreen" source="npm" />
+   <access origin="*" />
     
 <icon src="icon.png" platform="android" />
 <icon src="images/icons/ldpi.png" platform="android" qualifier="ldpi" />
