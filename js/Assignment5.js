@@ -458,29 +458,29 @@ else {
 }
 
 
-function Location() //Calls the Geolocation function built in to the web browser
-{
-    var geo = navigator.geolocation;  //References the Web Browser (navigator) geolocation service
-    if (geo) //Tests to see if geolocation service is available
-    {
-        geo.getCurrentPosition(showPosition); //If the geolocation service is available it gets the position and calls a function to display it
-        getMapLocation();
-        }
-        else
-        {
-            alert("Geolocation is not supported"); //If the Geolocation service is not available it displays a message
-        }
-}
-function showPosition(position) //Function receives the geolocation data and displays it
-{
-    var latitude = position.coords.latitude; //Retrieves latitude data
-    var longitude = position.coords.longitude; //Retrieves longitude data
-    var display = "<table><tr><th>Latitude</th><th>Longitude</th></tr> <tr><td>" + latitude + "</td><td>" + longitude + "</td></tr>";
-    document.getElementById("latlong").innerHTML = display;
-}
 
+document.addEventListener("deviceready", onDeviceReady, false);
 
+    // PhoneGap is loaded and Ready
+    //
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
 
+    // Display `Position` properties from the geolocation
+    //
+    function onSuccess(position) {
+        var div = document.getElementById('latlong');
+
+        div.innerHTML = '<table><tr><th>Latitude</th><th> Longitude</th></tr><tr><td>' + position.coords.latitude  + '</td><td>' + position.coords.longitude + '</td></tr></table>';
+        getMapLocation();                
+    }
+
+    // Show an alert if there is a problem getting the geolocation
+    //
+    function onError() {
+        alert('onError!');
+    }
 
 function getMapLocation() {
  
@@ -492,10 +492,10 @@ function getMapLocation() {
  
 var onMapSuccess = function (position) {
  
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
+    Latitude = position.coords.latitude;
+    Longitude = position.coords.longitude;
  
-    getMap(latitude, longitude);
+    getMap(Latitude, Longitude);
  
 }
  
@@ -505,7 +505,7 @@ function getMap(latitude, longitude) {
  
     var mapOptions = {
         center: new google.maps.LatLng(0, 0),
-        zoom: 5,
+        zoom: 4,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
  
@@ -531,10 +531,10 @@ var onMapWatchSuccess = function (position) {
     var updatedLatitude = position.coords.latitude;
     var updatedLongitude = position.coords.longitude;
  
-    if (updatedLatitude != latitude && updatedLongitude != longitude) {
+    if (updatedLatitude != Latitude && updatedLongitude != Longitude) {
  
-        latitude = updatedLatitude;
-        longitude = updatedLongitude;
+        Latitude = updatedLatitude;
+        Longitude = updatedLongitude;
  
         getMap(updatedLatitude, updatedLongitude);
     }
@@ -554,7 +554,6 @@ function watchMapPosition() {
     return navigator.geolocation.watchPosition
     (onMapWatchSuccess, onMapError, { enableHighAccuracy: true });
 }
-
     
 function HideFooter()
     {

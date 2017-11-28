@@ -5,23 +5,7 @@
 <title>IS 633 Assignment Plugin Test</title>
 <link rel="stylesheet" type="text/css" href="styles/Assignment5.css" />
 <script src="js/Assignment5.js"></script>
-<script type="text/javascript" charset="utf-8">
 
-    // Call onDeviceReady when PhoneGap is loaded.
-    //
-    // At this point, the document has loaded but phonegap-1.0.0.js has not.
-    // When PhoneGap is loaded and talking with the native device,
-    // it will call the event `deviceready`.
-    // 
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-    //
-    function onDeviceReady() {
-        // Now safe to use the PhoneGap API
-    }
-
-    </script>
 </head>
 <body>
 
@@ -139,7 +123,7 @@
 		<section id="geolocation">
 			<h3>Geolocation</h3>
 			<hr>
-			<button onclick="Location()" class="bigbutton">Find Your Current Location</button>
+			<button onclick="onDeviceReady()" class="bigbutton">Find Your Current Location</button>
 			<br>
 			<div id ="latlong"></div>
 		
