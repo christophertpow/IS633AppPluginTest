@@ -464,7 +464,7 @@ function Location() //Calls the Geolocation function built in to the web browser
     if (geo) //Tests to see if geolocation service is available
     {
         geo.getCurrentPosition(showPosition); //If the geolocation service is available it gets the position and calls a function to display it
-        document.getElementById("map").style.visibility = "visible";
+        getMapLocation();
         }
         else
         {
@@ -477,6 +477,82 @@ function showPosition(position) //Function receives the geolocation data and dis
     var longitude = position.coords.longitude; //Retrieves longitude data
     var display = "<table><tr><th>Latitude</th><th>Longitude</th></tr> <tr><td>" + latitude + "</td><td>" + longitude + "</td></tr>";
     document.getElementById("latlong").innerHTML = display;
+}
+
+
+
+
+function getMapLocation() {
+ 
+    navigator.geolocation.getCurrentPosition
+    (onMapSuccess, onMapError, { enableHighAccuracy: true });
+}
+ 
+// Success callback for get geo coordinates
+ 
+var onMapSuccess = function (position) {
+ 
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+ 
+    getMap(latitude, longitude);
+ 
+}
+ 
+// Get map by using coordinates
+ 
+function getMap(latitude, longitude) {
+ 
+    var mapOptions = {
+        center: new google.maps.LatLng(0, 0),
+        zoom: 5,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+ 
+    map = new google.maps.Map
+    (document.getElementById("map"), mapOptions);
+ 
+ 
+    var latLong = new google.maps.LatLng(latitude, longitude);
+ 
+    var marker = new google.maps.Marker({
+        position: latLong
+    });
+ 
+    marker.setMap(map);
+    map.setZoom(10);
+    map.setCenter(marker.getPosition());
+}
+ 
+// Success callback for watching your changing position
+ 
+var onMapWatchSuccess = function (position) {
+ 
+    var updatedLatitude = position.coords.latitude;
+    var updatedLongitude = position.coords.longitude;
+ 
+    if (updatedLatitude != latitude && updatedLongitude != longitude) {
+ 
+        latitude = updatedLatitude;
+        longitude = updatedLongitude;
+ 
+        getMap(updatedLatitude, updatedLongitude);
+    }
+}
+ 
+// Error callback
+ 
+function onMapError(error) {
+    console.log('code: ' + error.code + '\n' +
+        'message: ' + error.message + '\n');
+}
+ 
+// Watch your changing position
+ 
+function watchMapPosition() {
+ 
+    return navigator.geolocation.watchPosition
+    (onMapWatchSuccess, onMapError, { enableHighAccuracy: true });
 }
 
     
