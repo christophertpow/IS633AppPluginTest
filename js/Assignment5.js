@@ -472,7 +472,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
     function onSuccess(position) {
         var div = document.getElementById('latlong');
 
-        div.innerHTML = '<table><tr><th>Latitude</th><th> Longitude</th></tr><tr><td>' + position.coords.latitude  + '</td><td>' + position.coords.longitude + '</td></tr></table>';
+        div.innerHTML = '<span class="labelcaption">Your Location:</span><br><table><tr><th>Latitude</th><th> Longitude</th></tr><tr><td>' + position.coords.latitude  + '</td><td>' + position.coords.longitude + '</td></tr></table>';
         getMapLocation();                
     }
 
